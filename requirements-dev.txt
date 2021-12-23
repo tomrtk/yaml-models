@@ -1,0 +1,13 @@
+autopep8
+build
+flake8
+isort
+mypy>=0.902
+pre-commit
+pyupgrade
+tox
+twine
+types-all
+covdefaults
+coverage
+pytest>=4.0.0
