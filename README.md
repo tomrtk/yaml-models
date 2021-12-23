@@ -1,3 +1,6 @@
+[![Tests](https://github.com/tomrtk/yaml-models/actions/workflows/tests.yaml/badge.svg)](https://github.com/tomrtk/yaml-models/actions/workflows/tests.yaml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tomrtk/yaml-models/master.svg)](https://results.pre-commit.ci/latest/github/tomrtk/yaml-models/master)
+
 # yaml-models
 
 Python package generating `torch` models from a `yaml` configuration file.
