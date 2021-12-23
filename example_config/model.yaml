@@ -1,0 +1,9 @@
+model:
+-   type: Linear
+    in_features: 2
+    out_features: 10
+-   type: ReLU
+-   type: Linear
+    in_features: 10
+    out_features: 1
+-   type: Sigmoid
