@@ -12,9 +12,15 @@ model:
 -   type: Sigmoid
 """
 
-BAD_CONFIG = """\
+CONFIG_MISSING_FIELD = """\
 model:
 -   type: Linear
+    in_features: 2
+"""
+
+CONFIG_BAD_YAML = """\
+model:
+  type: Linear
     in_features: 2
 """
 
@@ -30,10 +36,20 @@ def config_path(tmpdir) -> str:
 
 
 @pytest.fixture
-def bad_config_path(tmpdir) -> str:
+def config_missing_fields(tmpdir) -> str:
     config_path = tmpdir.join("model.yaml")
 
     with open(config_path, "w") as f:
-        f.write(BAD_CONFIG)
+        f.write(CONFIG_MISSING_FIELD)
+
+    return config_path
+
+
+@pytest.fixture
+def config_bad_yaml(tmpdir) -> str:
+    config_path = tmpdir.join("model.yaml")
+
+    with open(config_path, "w") as f:
+        f.write(CONFIG_BAD_YAML)
 
     return config_path

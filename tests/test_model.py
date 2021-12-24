@@ -8,7 +8,6 @@ from yaml_models.model import Model
 def test_model(config_path):
     model = Model(config_path=config_path)
 
-    print(model)
     assert len(model.layers) == 4
 
     x = torch.rand((1, 2))
@@ -18,6 +17,6 @@ def test_model(config_path):
     assert pred.shape == (1, 1)
 
 
-def test_load_bad_config(bad_config_path):
+def test_load_model_config_missing_fields(config_missing_fields):
     with pytest.raises(MissingResquiredArgument):
-        _ = Model(config_path=bad_config_path)
+        _ = Model(config_path=config_missing_fields)

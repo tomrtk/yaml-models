@@ -1,5 +1,6 @@
 import pytest
 
+from yaml_models.config import YAMLError
 from yaml_models.config import _load_config
 
 
@@ -20,3 +21,8 @@ def test_load_no_config(tmpdir):
 
     with pytest.raises(FileNotFoundError):
         _ = _load_config(path)
+
+
+def test_load_model_config_missing_fields(config_bad_yaml):
+    with pytest.raises(YAMLError):
+        _ = _load_config(config_bad_yaml)
